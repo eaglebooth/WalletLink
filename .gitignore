@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.npm-cache/
+
+.env.*
+!.env.example
+.vercel/
+*.png
+bridge-test-state.json
+scripts/bridge-quote.mjs
+scripts/fund-hadrian.mjs
+scripts/test-hadrian.mjs
+walletlink-x-post.txt
+!public/assets/*.png

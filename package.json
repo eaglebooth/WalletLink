@@ -1,0 +1,27 @@
+{
+  "name": "walletlink",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "compile": "node scripts/contract.mjs",
+    "deploy": "node --env-file-if-exists=.env scripts/contract.mjs --deploy",
+    "test": "node --test scripts/contract.test.mjs",
+    "postinstall": "tsc -p node_modules/@rome-protocol/sdk/tsconfig.json"
+  },
+  "dependencies": {
+    "@rome-protocol/sdk": "https://codeload.github.com/rome-protocol/rome-sdk-ts/tar.gz/refs/tags/v0.4.0",
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4",
+    "buffer": "^6.0.3",
+    "viem": "^2.38.0"
+  },
+  "devDependencies": {
+    "ganache": "7.9.2",
+    "solc": "0.8.28",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.0"
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Connect your EVM and Solana identities with consent from both wallets.">
+  <title>WalletLink — Two wallets, one identity</title>
+  <script type="module" src="/src/bootstrap.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="WalletLink home"><span class="brand-icon">↗</span> WalletLink<span class="brand-dot">.</span></a>
+    <nav aria-label="Navigation"><a href="#how">How it works</a><a href="#workspace">Link wallets</a><a href="#lookup-section">Look up</a></nav>
+    <span class="network"><i></i> Hadrian Testnet</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> YOUR IDENTITY, ACROSS TWO ECOSYSTEMS</div>
+        <h1>Two wallets.<br>One identity.<br><em>All yours.</em></h1>
+        <p class="hero-description">MetaMask on EVM. Phantom on Solana. Link your addresses so anyone can verify that you control both wallets.</p>
+        <div class="hero-actions"><a class="button" href="#workspace">Link my wallets <span>↗</span></a><button id="demo-open" class="text-button">▷ See how it works</button></div>
+        <p class="microcopy">Consent from both wallets · Publicly verifiable · Revocable</p>
+      </div>
+      <div class="identity-visual" aria-label="Illustration of a profile linking two wallet addresses">
+        <div class="visual-grid"></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-wallet evm-art"><span class="wallet-logo eth">◆</span><div><small>EVM WALLET</small><strong>0x71C…9A42</strong></div><span class="mini-check">✓</span></div>
+        <div class="connection-line"></div>
+        <div class="profile-art"><div class="profile-avatar">W<span>↗</span></div><h3>Your identity</h3><p>Approved by both wallets</p><span class="verified-pill">✓ Linked</span></div>
+        <div class="floating-wallet sol-art"><span class="wallet-logo sol">≋</span><div><small>SOLANA WALLET</small><strong>7xKp…b3Fg</strong></div><span class="mini-check">✓</span></div>
+        <span class="illustration-note">ILLUSTRATION · EXAMPLE ADDRESSES</span>
+      </div>
+    </section>
+    <div class="benefit-strip"><span>01 <strong>Prove wallet ownership</strong></span><span>02 <strong>One shared on-chain record</strong></span><span>03 <strong>Revoke from either wallet</strong></span></div>
+    <section id="how" class="explain-section">
+      <div class="section-heading"><div><div class="eyebrow">A SIMPLE, TWO-SIDED HANDSHAKE</div><h2>Two wallets. Two approvals.</h2></div><p>Your link becomes publicly verifiable once both wallets have approved it on-chain.</p></div>
+      <div class="steps">
+        <article><span class="step-number">01</span><h3>Connect your wallets</h3><p>Open MetaMask and Phantom, then choose the two accounts you want to link.</p><span class="step-tag">Choose your accounts</span></article>
+        <article><span class="step-number">02</span><h3>Request from EVM</h3><p>Approve a transaction in MetaMask to propose the link. Your request stays valid for 24 hours.</p><span class="step-tag">Transaction on Hadrian</span></article>
+        <article><span class="step-number">03</span><h3>Accept from Solana</h3><p>Approve in Phantom to complete the link. Both addresses now resolve to the same public record.</p><span class="step-tag">Confirm wallet ownership</span></article>
+      </div>
+    </section>
+    <section class="use-case">
+      <div class="use-icon">↗</div><div><div class="eyebrow">BUILT FOR YOUR ON-CHAIN LIFE</div><h3>One contributor. Two active addresses.</h3><p>Submit projects with your EVM wallet and participate in communities with your Solana wallet. A public link lets others connect those addresses to one profile. Apps can use this record by integrating WalletLink.</p></div>
+    </section>
+    <section id="workspace" class="workspace-section">
+      <div class="section-heading"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>Link your wallets</h2></div><span class="outline-pill">Testnet preview</span></div>
+      <div id="deployment-notice" class="notice" hidden><span>ⓘ</span><div><strong>On-chain actions are awaiting deployment</strong><p>Explore the walkthrough and connect your wallets. Linking and lookup will be available once the Hadrian contract is configured.</p></div></div>
+      <div class="work-grid">
+        <div class="link-panel">
+          <div class="panel-heading"><span class="panel-number">1</span><div><h3>Choose your wallets</h3><p>Connect each wallet and check that you have selected the right account.</p></div></div>
+          <div class="wallets">
+            <div class="wallet-card"><span class="wallet-logo wallet-brand metamask-brand"><img src="/assets/metamask.png" alt="MetaMask" width="36" height="36"></span><span class="wallet-type">EVM WALLET</span><h4>MetaMask</h4><p id="evm-label">Not connected</p><button id="connect-evm" class="secondary">Connect MetaMask ↗</button></div>
+            <div class="wallet-card"><span class="wallet-logo wallet-brand phantom-brand"><img src="/assets/phantom.png" alt="Phantom" width="36" height="36"></span><span class="wallet-type">SOLANA WALLET</span><h4>Phantom</h4><p id="sol-label">Not connected</p><button id="connect-sol" class="secondary">Connect Phantom ↗</button></div>
+          </div>
+          <p id="connected" class="address-summary">Connect both wallets to get started.</p>
+          <div class="panel-heading approval-heading"><span class="panel-number">2</span><div><h3>Approve from both sides</h3><p>Send a request first, then accept it with Phantom.</p></div></div>
+          <div class="actions"><button id="request">Request with MetaMask</button><button id="accept" class="secondary">Accept with Phantom</button></div>
+          <p id="next-step" class="next-step">Next — connect MetaMask and Phantom.</p>
+          <button id="cancel" class="text-button small">Cancel pending request</button>
+          <div class="activity"><span class="activity-dot"></span><div><strong>Activity</strong><p id="status" role="status" aria-live="polite">Ready when you are. Connect your wallets to begin.</p><a id="transaction" target="_blank" rel="noopener" hidden>View latest transaction ↗</a></div></div>
+        </div>
+        <aside class="guide-panel">
+          <div class="eyebrow">BEFORE YOU START</div><h3>A little preparation</h3>
+          <ol><li><strong>Install MetaMask and Phantom</strong><p>Open WalletLink in a browser with both wallet extensions installed.</p></li><li><strong>Get test tokens</strong><p>MetaMask needs USDC for gas on Hadrian. Phantom needs SOL and USDC on Solana Devnet.</p></li><li><strong>Choose the test networks</strong><p>We will ask MetaMask to switch to Hadrian. Enable Devnet in Phantom before approving.</p></li></ol>
+          <a href="https://docs.rome.builders/getting-started-1/quickstart" target="_blank" rel="noopener">Testnet funding guide ↗</a>
+          <div class="privacy-note"><span>◉</span><div><strong>Your link, your choice</strong><p>Linking makes both addresses public together. Either wallet can revoke the active link. Past transactions remain on-chain.</p></div></div>
+        </aside>
+      </div>
+    </section>
+    <section id="lookup-section" class="lookup-section">
+      <div><div class="eyebrow">VERIFY A WALLET PAIR</div><h2>Who is on the other side?</h2><p>Paste an EVM or Solana address to find its active linked wallet. Anyone can look up a pair.</p></div>
+      <div class="lookup-panel"><form id="lookup"><label for="address">Wallet address</label><div class="search"><input id="address" required autocomplete="off" spellcheck="false" placeholder="0x… or Solana address"><button>Look up ↗</button></div></form><p id="result" aria-live="polite">The linked pair will appear here.</p><div class="actions"><button id="revoke-evm" class="secondary" hidden>Revoke with MetaMask</button><button id="revoke-sol" class="secondary" hidden>Revoke with Phantom</button></div></div>
+    </section>
+    <section class="faq-section"><div class="eyebrow">GOOD TO KNOW</div><h2>Before you approve</h2><details><summary>What does a wallet link do?</summary><p>A link creates a public record that both wallets approved this address pair. Anyone can look it up to connect your profile across EVM and Solana.</p></details><details><summary>Does linking give access to my tokens?</summary><p>The WalletLink contract records and removes address pairs. Linking does not request token approvals. Transactions still require network fees.</p></details><details><summary>Why do both wallets need to approve?</summary><p>MetaMask proposes the pair and Phantom accepts it. The contract completes the link only when the specified Solana wallet approves the request.</p></details><details><summary>Can I change my linked wallet?</summary><p>Yes. Revoke your current link with either wallet, then create a new request. Each address can have one active link.</p></details></section>
+    <footer><a class="brand" href="#">↗ WalletLink.</a><span>Two approvals. One verifiable identity.</span><span>Built on Hadrian</span></footer>
+  </main>
+  <dialog id="demo-dialog" aria-labelledby="demo-title"><button id="demo-close" class="dialog-close" aria-label="Close walkthrough">×</button><div class="eyebrow">INTERACTIVE WALKTHROUGH</div><h2 id="demo-title">From two wallets to one identity</h2><p class="demo-disclaimer">An example walkthrough. No wallet connection or transaction is needed.</p><div class="demo-progress"><span id="demo-count">01 / 03</span><span id="demo-stage">Connect your wallets</span></div><div class="demo-pair"><div><span class="wallet-logo eth">◆</span><strong>MetaMask</strong><small>0x71C…9A42</small></div><span id="demo-link">···</span><div><span class="wallet-logo sol">≋</span><strong>Phantom</strong><small>7xKp…b3Fg</small></div></div><p id="demo-description">Choose two wallets you control. Connecting lets the app read your selected account addresses.</p><div class="demo-controls"><button id="demo-back" class="secondary">Back</button><button id="demo-next">Next step →</button></div></dialog>
+</body>
+</html>
+

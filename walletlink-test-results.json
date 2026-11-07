@@ -1,0 +1,58 @@
+{
+  "contract": "0x449f8c732e4e93a338b4e93c9fed32cf594ab5ea",
+  "evm": "0xeb57bc7125fa60d7482CE12058397369AB3581f8",
+  "solana": "6b4xaakCMstUhzoWY1VBr37DcrP7Bnt9gr7tWKamEN1v",
+  "checks": [
+    "EVM request recorded",
+    "EVM wallet cannot impersonate Solana acceptance",
+    "Both addresses resolve to the same pair",
+    "Contract synthetic identity matches official SDK",
+    "Solana revocation clears both directions",
+    "EVM revocation clears both directions",
+    "Final pair left linked for browser lookup"
+  ],
+  "transactions": [
+    {
+      "lane": "evm",
+      "action": "request",
+      "hash": "0x22faa7a2cc68e281afa7326ffb9e6311f2375209cd5770e62dbaecf80ee804b2"
+    },
+    {
+      "lane": "solana",
+      "action": "accept",
+      "signature": "5PwgqehsKi8QEkTMyKYDM2RMohBaarbgV7DzU1Fix1dZ9xLwbqJ8zggTEvHC76FpaUZE3qQm5xiYeHttXjYXTfkf"
+    },
+    {
+      "lane": "solana",
+      "action": "revoke",
+      "signature": "4v6Avu33oC9gHc3kBJ97UFZPT74EmqyBJJNZ2inBfLPM3xkU9bgnKSAh1DEs6TJ9GwNeXf3c22zvnzdgBs5TK4rD"
+    },
+    {
+      "lane": "evm",
+      "action": "request",
+      "hash": "0x751d6f2d56ec828db7838f5550527c0cb7430273da2a3045af063c9249119e74"
+    },
+    {
+      "lane": "solana",
+      "action": "accept",
+      "signature": "4k1HhykRPTSZJV1i3F59QsoBCvZKU6QZhFmShWjkvXGPgU6F4k61MNLsC6MNxLZaLbBemGVpMn9RpnHjbYbyt3i1"
+    },
+    {
+      "lane": "evm",
+      "action": "revoke",
+      "hash": "0x86fd065fcb2ad729e26ff044e16bd888059c11315e124e0b6164a623336237ce"
+    },
+    {
+      "lane": "evm",
+      "action": "request",
+      "hash": "0x292733d0f3ad8cb9bc5de37d5d9e54028940e8ee05505e0c99d1754a17423af9"
+    },
+    {
+      "lane": "solana",
+      "action": "accept",
+      "signature": "5WoCrPQn8CHieLirdfFtBas6UfsrVM5xtz1ZvE4XZf7UXvuqY2QXPxnMbpjPN3FH4xhQv5W3hUL5UDwnqVBNr943"
+    }
+  ],
+  "remainingGas": "2.23334828965685003",
+  "completedAt": "2026-11-07T03:22:13.977Z"
+}

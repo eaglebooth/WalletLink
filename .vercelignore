@@ -1,0 +1,14 @@
+.git
+.vercel
+node_modules
+.npm-cache
+.env
+.env.*
+*.png
+bridge-test-state.json
+walletlink-*.json
+walletlink-x-post.txt
+scripts/bridge-quote.mjs
+scripts/fund-hadrian.mjs
+scripts/test-hadrian.mjs
+!public/assets/*.png
