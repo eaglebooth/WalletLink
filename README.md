@@ -1,5 +1,9 @@
 # WalletLink
 
+Live dApp: https://walletlink-livid.vercel.app/
+
+Source: https://github.com/eaglebooth/WalletLink
+
 A two-wallet consent registry for Hadrian. An EVM wallet requests a link to a Solana public key. The Solana wallet accepts through the Rome Solana lane. Either wallet can revoke the active link.
 
 ## Run locally
